@@ -1,4 +1,5 @@
-#auto-inv-selenium
+auto-inv-selenium
+
 STEP 1:
 Download the file auto-inv-selenium:
     - Press on the file above named auto-inv-selenium,
@@ -35,7 +36,7 @@ The program takes a little while because it runs a headless browser with seleniu
 
 The command to run the program is:
 
-##python auto-inv-selenium.py
+python auto-inv-selenium.py
 
 It may be easier to use the program to put data in the test.xlsx and download image, and then move the data from test.xlsx to a different excel sheet with other product inventory listings, and move the picture to the desired location.
 
