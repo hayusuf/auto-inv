@@ -1,17 +1,17 @@
 auto-inv-selenium
 
 STEP 1:
-Download the file auto-inv-selenium:
-    - Press on the file above named auto-inv-selenium,
+Download the file auto-inv-selenium.py:
+    - Press on the file above named auto-inv-selenium.py,
     - Click Raw 
-    - Right click and save page as auto-inv-selenium into prefered folder.
+    - Right click and save page as auto-inv-selenium.py into prefered folder.
 
 
 STEP 2:
 Download the logo.jpg:
     - Press on logo.jpg
-    - Press download and put in same folder as auto-inv-selenium
---- if you wish to use a different logo, put a logo.jpg(has to be called this) image into the same folder as auto-inv-selenium
+    - Press download and put in same folder as auto-inv-selenium.py
+--- if you wish to use a different logo, put a logo.jpg(has to be called this) image into the same folder as auto-inv-selenium.py
 
 STEP 3:
 Inside command prompt paste the following command:
@@ -22,7 +22,7 @@ Download required chromedriver.exe
     - Visit https://chromedriver.chromium.org/
     - Press download latest stable release
     - Download chromedriver_win32.zip
-    - extract chromedriver.exe file and put into same folder as auto-inv-selenium and logo.jpg.
+    - extract chromedriver.exe file and put into same folder as auto-inv-selenium.py and logo.jpg.
 
 Now you can use the auto-inv-selenium program in the command prompt to 
 
