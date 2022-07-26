@@ -34,9 +34,8 @@ and put it into an excel sheet called test.xlsx(which cannot be open in excel fo
   
 The program takes a little while because it runs a headless browser with selenium so be patient. Please send me any question thats you have.  
   
-The command to run the program is:  
-  
-python auto-inv-selenium.py  
+To run the program:
+Double click on it from file manager.
   
 It may be easier to use the program to put data in the test.xlsx and download image, and then move the data from test.xlsx to a different excel sheet with other product inventory listings, and move the picture to the desired location.  
 
