@@ -17,7 +17,7 @@ Download the logo.jpg:
   
 STEP 3:  
 Inside command prompt paste the following command:  
-pip install openpyxl pillow beautifulsoup4 urllib3 selenium requests_html  
+python3 -m pip install openpyxl pillow beautifulsoup4 urllib3 selenium requests_html  
   
 STEP 4:  
 Download required chromedriver.exe  
