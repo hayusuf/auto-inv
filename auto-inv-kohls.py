@@ -24,7 +24,6 @@ def get_info(url):
     r = session.get(url)
     #retrieve image 
     img_link = r.html.search('<meta itemprop="image" content="{}" />')[0]
-    print(img_link)
     #img_link_tag = soup.find(id="thd-helmet__link--preloadImg")
     #img_link = img_link_tag.get('href')
     sm_img_link = r.html.search('<meta property="og:url" content="https://www.kohls.com/product/{}/{}.jsp" />')[1] + ".jpg"
@@ -38,17 +37,20 @@ def get_info(url):
     wb = openpyxl.load_workbook("test.xlsx")
     ws = wb.active
     i = str(ws.max_row + 1)
-    print(i)
     #pallet
-    ws['A' + i] = input("What pallet number is this item from?\n")
+    ifUsed = input("Is this used? Enter 'y' for used or 'n' for new. \n")
+    if ifUsed == 'y':
+        ws['C' + i] = "used"
+    elif ifUsed == 'n':
+        ws['C' + i] = "new"
     #name
     ws['B' + i] = r.html.search('<meta itemprop="name" content="{}" />')[0]
     #box status
-    #ifBox = input("Is the item in box? Answer 'y' for yes and 'n' for no.\n")
-    #if ifBox == 'y':
-    #    ws['C' + i] = "in box"
-    #elif ifBox == 'n':
-    #    ws['C' + i] = "no box"
+    ifBox = input("Is the item in box? Answer 'y' for yes and 'n' for no.\n")
+    if ifBox == 'y':
+        ws['D' + i] = "in box"
+    elif ifBox == 'n':
+        ws['D' + i] = "no box"
     #upc
     #if  r.html.search('"upc":"{}"') != None:
         #ws['E' + i] = r.html.search('"upc":"{}"')[0]
@@ -57,10 +59,17 @@ def get_info(url):
         #ws['F' + i] = r.html.search('"storeSkuNumber":"{}"')[0]
     #price
     ws['G' + i] = r.html.search('<meta itemprop="price" content="{}" />')[0]
+#old price
+    if r.html.search('","regularPrice":"{}"') != None:
+        ws['H' + i] = r.html.search('","regularPrice":"{}","')[0]	
     wb.save("test.xlsx")
 
 def main():
-    get_info(input("Enter kohls item url\n"))
+	stop = False
+	while(stop == False):
+		get_info(input("Enter kohls item url\n"))
+		if input("Another item? y for yes, n for no\n") == "n":
+        		stop = True
 
 if __name__ == "__main__":
     main()
